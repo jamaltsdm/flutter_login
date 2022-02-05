@@ -190,6 +190,7 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
       }
     });
 
+    if (_submitController.toStringDetails().contains('DISPOSED')) { return true; }
     await _submitController.reverse();
 
     if (!DartHelper.isNullOrEmpty(error)) {
